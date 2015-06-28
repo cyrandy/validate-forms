@@ -1,0 +1,17 @@
+{
+  "framework": "mocha+chai",
+  "src_files": [
+    "test/index.js"
+  ],
+  "serve_files": [
+    "test/bundle.js"
+  ],
+  "launch_in_dev": [
+    "Chrome",
+    "PhantomJS"
+  ],
+  "launch_in_ci": [
+    "PhantomJS"
+  ],
+  "before_tests": "./node_modules/.bin/browserify -e test/index.js -o test/bundle.js"
+}
