@@ -1,7 +1,13 @@
 NODEBIN := ./node_modules/.bin
 
+build:
+	$(NODEBIN)/babel -d lib src
+
 test:
-	$(NODEBIN)/testem -f testem.json
+	$(NODEBIN)/testem -p 7358 -f testem.json
+
+testci:
+	$(NODEBIN)/testem ci -p 7358 -f testem.json
 
 clean:
 	rm -rf *.log dist
@@ -9,4 +15,4 @@ clean:
 silent:
 	@:
 
-.PHONY: silent clean dependency testci test lint dev
+.PHONY: silent clean testci test build
