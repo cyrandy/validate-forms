@@ -4,7 +4,7 @@
   "description": "Easily validate multiple form fields against rules. Bind multiple events on form fields to trigger checking at once.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make testci"
   },
   "repository": {
     "type": "git",
