@@ -50,25 +50,27 @@ class Field {
 }
 
 class Validator {
-  constructor(form) {
+  constructor(form, autoSubmit = false) {
     this.onValid = undefined
     this.onError = undefined
     this.form = form
     this.fields = []
     this.form.addEventListener('submit', (e) => {
       e.preventDefault()
-      // if (!this.validateAll()) {
-      //   return false
-      // }
+      if (!this.validateAll()) { return false }
+
       if (this.onSubmit) { this.onSubmit() }
-      return false
+
+      return autoSubmit ? true : false
     }, true)
     return this
   }
 
   // private
   validateAll() {
-    return
+    return this.fields.reduce((isValidate, field) => {
+      return isValidate & field.validate()
+    }, true)
   }
 
   on(domEvent, useCapture = false) {
