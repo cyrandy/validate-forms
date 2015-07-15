@@ -26,6 +26,8 @@
     "browserify": "^10.2.4",
     "chai": "^3.0.0",
     "eslint": "^0.24.0",
+    "phantomjs": "^1.9.17",
+    "phantomjs-polyfill": "0.0.1",
     "sinon": "^1.15.4",
     "sinon-chai": "^2.8.0",
     "testem": "^0.8.4"
