@@ -4,6 +4,7 @@
   "description": "Easily validate multiple form fields against rules. Bind multiple events on form fields to trigger checking at once.",
   "main": "lib/index.js",
   "scripts": {
+    "pretest": "make build",
     "test": "make testci"
   },
   "repository": {
