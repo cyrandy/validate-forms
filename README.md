@@ -7,3 +7,13 @@
 
 Easily set a form validator.
 Can validate multiple form fields against multiple rules. Bind events on form fields to trigger checking at once.
+
+## Usage
+```javascript
+new Validator(form)
+  .on('keyup')
+  .field('passwordConfirm')
+  .is('minimum', 8)
+  .is('match', 'password')
+  .setValidHandler(fn)
+```
